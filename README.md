@@ -77,8 +77,4 @@ $ npm install
 $ npm start
 ```
 
-## Contact
-
-- [Website](https://pantak.net)
-- [GitHub](https://github.com/Kielx)
 
