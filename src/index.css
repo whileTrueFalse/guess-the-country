@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: url("./images/background.webp");
+  background-size: cover;
+}
+
+.btn {
+  @apply flex gap-5 w-full border-2 border-indigo-800 p-3 text-indigo-800 items-center rounded-xl cursor-pointer transition-all hover:bg-yellow-500 hover:border-yellow-500 hover:text-white;
+}
+
+.btn-selected {
+  @apply flex ml-auto gap-5 w-1/3 border-2 bg-yellow-500 border-yellow-500 p-3 text-white justify-center font-extrabold items-center rounded-xl cursor-pointer transition-all hover:bg-yellow-400 hover:border-yellow-400;
+}
+
+.btn-learn-more {
+  @apply flex mr-auto gap-5 w-1/3 border-2 bg-transparent border-yellow-500 p-3 text-yellow-500 justify-center font-extrabold items-center rounded-xl cursor-pointer transition-all hover:bg-yellow-400 hover:border-yellow-400 hover:text-white;
+}
+
+.correct::after {
+  display: block;
+  content: " ";
+  background-image: url("./images/good.svg");
+  background-size: 28px 28px;
+  height: 28px;
+  width: 28px;
+  margin-left: auto;
+}
+
+.correct {
+  @apply bg-green-500 border-green-500 font-bold text-white hover:bg-green-500 hover:border-green-500;
+}
+
+.wrong::after {
+  display: block;
+  content: " ";
+  background-image: url("./images/bad.svg");
+  background-size: 28px 28px;
+  height: 28px;
+  width: 28px;
+  margin-left: auto;
+}
+
+.wrong {
+  @apply bg-red-500 border-red-500 text-white pointer-events-none hover:bg-red-500 hover:border-red-500;
+}
+
+.App {
+  display: grid;
+  grid-template-rows: 1fr 5vh;
+}
+
+/* Loading Spinner */
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loading Spinner */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
